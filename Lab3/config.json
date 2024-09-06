@@ -1,0 +1,8 @@
+{
+    "text_file": "text.txt",
+    "target_language": "es",
+    "output_mode": "screen",
+    "char_limit": 600,
+    "word_limit": 150,
+    "sentence_limit": 20
+}
