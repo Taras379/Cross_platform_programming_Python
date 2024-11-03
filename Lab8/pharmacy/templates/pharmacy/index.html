@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Project</title>
+    <style>
+        h1 { text-align: center; }
+        h2 { text-align: center; }
+        em { color: blue; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: center; border: 1px solid black; }
+        th { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Pharmacy Management System</h1>
+    <h2>Student: Stakhniuk Taras Pavlovich, Group: IPZ-21007b</h2>
+
+    <h2>Medicines</h2>
+    <table>
+        <tr>
+            <th>Registration Number</th>
+            <th>Name</th>
+            <th>Manufacture Date</th>
+            <th>Shelf Life</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Prescription Required</th>
+        </tr>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.registration_number }}</td>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.manufacture_date }}</td>
+            <td>{{ medicine.shelf_life }}</td>
+            <td>{{ medicine.category }}</td>
+            <td>{{ medicine.price }}</td>
+            <td>{{ medicine.prescription_required }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Suppliers</h2>
+    <table>
+        <tr>
+            <th>Supplier Code</th>
+            <th>Supplier Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Contact Person</th>
+            <th>Location</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.supplier_code }}</td>
+            <td>{{ supplier.supplier_name }}</td>
+            <td>{{ supplier.address }}</td>
+            <td>{{ supplier.phone_number }}</td>
+            <td>{{ supplier.contact_person }}</td>
+            <td>{{ supplier.location }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Supplies</h2>
+    <table>
+        <tr>
+            <th>Supply Code</th>
+            <th>Supply Date</th>
+            <th>Medicine</th>
+            <th>Quantity</th>
+            <th>Supplier</th>
+        </tr>
+        {% for supply in supplies %}
+        <tr>
+            <td>{{ supply.supply_code }}</td>
+            <td>{{ supply.supply_date }}</td>
+            <td>{{ supply.medicine.name }}</td>
+            <td>{{ supply.quantity }}</td>
+            <td>{{ supply.supplier.supplier_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
